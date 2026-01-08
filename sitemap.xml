@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+    <!-- Homepage / Hero -->
+    <url>
+        <loc>https://www.gianlucaforloni.com/</loc>
+        <lastmod>2025-01-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <!-- Sezioni del sito (anchor links) -->
+    <url>
+        <loc>https://www.gianlucaforloni.com/#chi-sono</loc>
+        <lastmod>2025-01-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://www.gianlucaforloni.com/#ambiti</loc>
+        <lastmod>2025-01-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <url>
+        <loc>https://www.gianlucaforloni.com/#metodo</loc>
+        <lastmod>2025-01-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://www.gianlucaforloni.com/#siti-web</loc>
+        <lastmod>2025-01-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <url>
+        <loc>https://www.gianlucaforloni.com/#esperienza</loc>
+        <lastmod>2025-01-08</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://www.gianlucaforloni.com/#contatti</loc>
+        <lastmod>2025-01-08</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+</urlset>
+
+<!--
+================================================================
+Note:
+- Sostituisci "www.gianlucaforloni.com" con il tuo dominio reale
+- Aggiorna <lastmod> quando modifichi i contenuti
+- Priority: 1.0 = massima priorità, 0.0 = minima
+- Changefreq: always, hourly, daily, weekly, monthly, yearly, never
+================================================================
+-->

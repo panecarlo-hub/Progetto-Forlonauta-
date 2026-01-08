@@ -1,0 +1,20 @@
+# ================================================================
+# robots.txt - Gian Luca Forloni
+# ================================================================
+
+# Consenti a tutti i robot di indicizzare il sito
+User-agent: *
+Allow: /
+
+# Blocca cartelle non necessarie (se esistono)
+Disallow: /assets/img/temp/
+Disallow: /assets/img/test/
+
+# Sitemap
+Sitemap: https://www.gianlucaforloni.com/sitemap.xml
+
+# ================================================================
+# Note:
+# - Sostituisci "www.gianlucaforloni.com" con il tuo dominio reale
+# - Questo file aiuta i motori di ricerca a capire cosa indicizzare
+# ================================================================

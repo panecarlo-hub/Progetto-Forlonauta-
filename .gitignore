@@ -1,0 +1,70 @@
+# ================================================================
+# .gitignore per Progetto Forlonauta
+# ================================================================
+
+# Sistema Operativo
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# Editor e IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.sublime-project
+.sublime-workspace
+
+# Node.js (se aggiungi build tools in futuro)
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
+
+# File temporanei
+*.tmp
+*.temp
+*.log
+*.cache
+
+# Backup
+*.bak
+*.backup
+*~
+
+# File compressi
+*.zip
+*.tar.gz
+*.rar
+
+# File di sistema
+.htaccess.backup
+.env
+.env.local
+
+# File FTP
+.ftpconfig
+sftp-config.json
+
+# Cache
+.sass-cache/
+.cache/
+
+# Build (se usi task runner)
+dist/
+build/
+
+# Immagini temporanee o di test
+assets/img/test/
+assets/img/temp/
+
+# File personali
+TODO.txt
+NOTES.txt
