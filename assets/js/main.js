@@ -360,6 +360,150 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // ================================================================
+    // ANIMATED COUNTERS (Hero Stats)
+    // ================================================================
+
+    function animateCounter(element, target, duration = 2000) {
+        const start = 0;
+        const increment = target / (duration / 16); // 60fps
+        let current = start;
+
+        const timer = setInterval(() => {
+            current += increment;
+            if (current >= target) {
+                element.textContent = Math.floor(target);
+                clearInterval(timer);
+            } else {
+                element.textContent = Math.floor(current);
+            }
+        }, 16);
+    }
+
+    // Trigger counters when hero stats are visible
+    const heroStats = document.querySelectorAll('.hero-stat-number');
+    if (heroStats.length > 0) {
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const target = parseInt(entry.target.getAttribute('data-target'));
+                    animateCounter(entry.target, target);
+                    statsObserver.unobserve(entry.target); // Animate only once
+                }
+            });
+        }, { threshold: 0.5 });
+
+        heroStats.forEach(stat => statsObserver.observe(stat));
+    }
+
+    // ================================================================
+    // NEWSLETTER FORM HANDLING
+    // ================================================================
+
+    const newsletterForm = document.getElementById('newsletterForm');
+    if (newsletterForm) {
+        newsletterForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const emailInput = this.querySelector('input[type="email"]');
+            const email = emailInput.value.trim();
+
+            // Simple validation
+            if (email && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                // In a real scenario, you would send this to a backend
+                // For now, show success message
+                const button = this.querySelector('button');
+                const originalText = button.textContent;
+
+                button.textContent = '✓ Iscritto!';
+                button.style.backgroundColor = '#10B981';
+                button.disabled = true;
+
+                // Reset after 3 seconds
+                setTimeout(() => {
+                    emailInput.value = '';
+                    button.textContent = originalText;
+                    button.style.backgroundColor = '';
+                    button.disabled = false;
+                }, 3000);
+
+                // Console log for development
+                console.log('Newsletter signup:', email);
+            } else {
+                // Show error
+                emailInput.style.borderColor = '#DC2626';
+                setTimeout(() => {
+                    emailInput.style.borderColor = '';
+                }, 2000);
+            }
+        });
+    }
+
+    // ================================================================
+    // WHATSAPP BUTTON TOOLTIP
+    // ================================================================
+
+    const whatsappButton = document.querySelector('.whatsapp-float');
+    if (whatsappButton) {
+        // Create tooltip
+        const tooltip = document.createElement('div');
+        tooltip.className = 'whatsapp-tooltip';
+        tooltip.textContent = 'Scrivimi su WhatsApp';
+        tooltip.style.cssText = `
+            position: absolute;
+            right: 70px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #1F2937;
+            color: #FFFFFF;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 0.875rem;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 300ms ease;
+        `;
+
+        whatsappButton.style.position = 'relative';
+        whatsappButton.appendChild(tooltip);
+
+        whatsappButton.addEventListener('mouseenter', () => {
+            tooltip.style.opacity = '1';
+        });
+
+        whatsappButton.addEventListener('mouseleave', () => {
+            tooltip.style.opacity = '0';
+        });
+    }
+
+    // ================================================================
+    // TESTIMONIALS CARD CLICK TRACKING
+    // ================================================================
+
+    const testimonialCards = document.querySelectorAll('.testimonial-card');
+    testimonialCards.forEach(card => {
+        card.addEventListener('click', function() {
+            // Add click effect
+            this.style.transform = 'scale(0.98)';
+            setTimeout(() => {
+                this.style.transform = '';
+            }, 150);
+        });
+    });
+
+    // ================================================================
+    // SMOOTH REVEAL FOR NEW SECTIONS
+    // ================================================================
+
+    const revealElements = document.querySelectorAll('.testimonial-card, .floating-badge, .whatsapp-float');
+    revealElements.forEach(element => {
+        if (!element.classList.contains('fade-in')) {
+            element.classList.add('fade-in');
+            observer.observe(element);
+        }
+    });
+
+    // ================================================================
     // CONSOLE MESSAGE
     // ================================================================
 
